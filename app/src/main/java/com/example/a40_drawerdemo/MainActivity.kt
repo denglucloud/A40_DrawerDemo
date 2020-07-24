@@ -9,6 +9,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_layout.*
 
 class MainActivity : AppCompatActivity() {
     //AppBarConfiguration是配置抽屉上的控制条的
@@ -19,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //去掉默认的导航条后，加入可收缩的导航条
+        setSupportActionBar(toolbar)
 
         /*
             装入
