@@ -8,23 +8,7 @@
     tools:context=".MainActivity"
     tools:openDrawer="start">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <fragment
-            android:id="@+id/fragment"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/navigation" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <include layout="@layout/content_layout" />
 
     <!-- android:layout_gravity中start表示抽屉从左边拉出来，end表示从右边拉出来 -->
     <com.google.android.material.navigation.NavigationView
@@ -34,5 +18,8 @@
 
         android:layout_gravity="start"
         app:headerLayout="@layout/navigation_view_header_layout"
+        app:itemIconTint="@color/navigation_item_backgroud_color"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Large"
+        app:itemTextColor="@color/navigation_item_backgroud_color"
         app:menu="@menu/menu" />
 </androidx.drawerlayout.widget.DrawerLayout>

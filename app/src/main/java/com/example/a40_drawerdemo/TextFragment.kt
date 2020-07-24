@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.content_layout.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,6 +34,10 @@ class TextFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //设置collapsingToolBarLayout显示的是选中菜单选项的文字
+        requireActivity().collapsingToolBarLayout.title = getString(R.string.text_fragment_title)
+        //设置背景
+        requireActivity().toolbarIconImageView.setImageResource(R.drawable.ct_title2)
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_text, container, false)
     }
