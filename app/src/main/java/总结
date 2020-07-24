@@ -1,0 +1,20 @@
+1 先创建几个页面
+2 创建一个navigation
+       加入三个fragment,不用连线，让它们成为独立页面
+3 创建menu
+       menu的子菜单menuitem的id要和navigation中添加的fragement的id一致，否则无法导航
+创建几个图标
+4 创建几个图标
+       把图标加入到nemu的menuitme中的icon图标中
+5 activity_main是应用程序启动进来的界面
+       把布局改为drawerLayout
+        重新加回constraintLayout
+       再在constraintLayout下加入NavHostFragment
+6 抽屉drawerLayout界面有两个子节点
+          一个是抽屉菜单NavigationView，一个是显示内容的
+7 在NavigationView加入menu
+      就是刚刚建立好的nemu
+8 创建一个Layout
+      制作成抽屉的顶部背景图片
+9 在activity_main的抽屉navitationView设置headLayout为刚刚制作的抽屉顶部背景图片
+到此界面基本完成
