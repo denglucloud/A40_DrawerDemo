@@ -20,16 +20,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        /**
-         * 装入
+        /*
+            装入
          */
         //fragment就是activity_main中加入的NavHostFragment
         navController = findNavController(R.id.fragment)
         //获取导航图表:navController.graph，抽屉:drawerLayout
-        appBarConfiguration = AppBarConfiguration(navController.graph,drawerLayout)
+//        //第一种方式
+//        appBarConfiguration = AppBarConfiguration(navController.graph,drawerLayout)
+        //第二种方式，使每一个菜单顶部上面的按键，按下后直接进入抽屉
+        val set = setOf(R.id.textFragment,R.id.listFragment,R.id.pagerFragment)
+        appBarConfiguration = AppBarConfiguration(set,drawerLayout)
 
-        /**
-         * 配置
+        /*
+            配置
          */
         setupActionBarWithNavController(navController,appBarConfiguration)
         navigationView.setupWithNavController(navController)
