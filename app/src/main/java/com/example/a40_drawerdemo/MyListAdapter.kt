@@ -1,4 +1,5 @@
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -13,7 +14,7 @@ import kotlinx.android.synthetic.main.view_holder.view.*
  * @description :
  *
  */
-class MyListAdapter : ListAdapter<Int, RecyclerView.ViewHolder>(callback) {
+class MyListAdapter(val isPager:Boolean) : ListAdapter<Int, RecyclerView.ViewHolder>(callback) {
     object callback : DiffUtil.ItemCallback<Int>() {
         override fun areItemsTheSame(oldItem: Int, newItem: Int): Boolean {
             return oldItem == newItem
@@ -27,6 +28,15 @@ class MyListAdapter : ListAdapter<Int, RecyclerView.ViewHolder>(callback) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         //创建View,这里是一个fragment（R.layout.view_holder）
         val view = LayoutInflater.from(parent.context).inflate(R.layout.view_holder,parent,false)
+        //判断是否是PagerView2
+        if (isPager){
+            view.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
+            /*
+                使视图填满
+             */
+            view.cellImageView.layoutParams.width = 0
+            view.cellImageView.layoutParams.height = 0
+        }
         //返回一个ViewHolder
         return object : RecyclerView.ViewHolder(view) {}
     }

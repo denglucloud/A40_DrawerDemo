@@ -1,5 +1,6 @@
 package com.example.a40_drawerdemo
 
+
 import MyListAdapter
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.content_layout.*
 import kotlinx.android.synthetic.main.fragment_list.*
 
@@ -33,7 +33,7 @@ class ListFragment : Fragment() {
         //创建layoutManager
         val layoutManager = GridLayoutManager(requireContext(),2)
         //创建适配器
-        val adapter = MyListAdapter()
+        val adapter = MyListAdapter(false)
         /*
             给recyclerView组件配置layoutManager和适配器
          */
