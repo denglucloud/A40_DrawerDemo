@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">A40_DrawerDemo</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 创建几个资源-->
+    <string name="text_fragment_title">Text</string>
+    <string name="list_fragment_title">List</string>
+    <string name="pager_fragment_title">Pager</string>
+    <string name="navigation_view_header_text">Drawer Header</string>
+</resources>
