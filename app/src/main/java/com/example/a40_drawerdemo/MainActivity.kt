@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,5 +33,13 @@ class MainActivity : AppCompatActivity() {
          */
         setupActionBarWithNavController(navController,appBarConfiguration)
         navigationView.setupWithNavController(navController)
+
+    }
+
+    /**
+     * 使首页的按键可用(也就是刚开启应用进入的第一个菜单的界面)，按下就进入抽屉
+     */
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }
